@@ -13,29 +13,29 @@ const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getPost());
-  },[dispatch])
+  }, [dispatch])
 
   return (
-    <Container className={classes.container} maxWidth="lg">
+    <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static">
-        <Typography className={classes.title} variant="h3">
+        <Typography className={classes.title} variant="h3" align="center">
           Memories
         </Typography>
       </AppBar>
-      {/* <Grow in> */}
-      <Container maxWidth="sm">
-        <Grid container justify="space-between" alignItems="stretch">
-          <Grid item xs={12} sm={7}>
-            <Form />
+      <Grow in>
+        <Container maxWidth="sm">
+          <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
+            <Grid item xs={12} sm={7}>
+              <Form />
+            </Grid>
+            <Grid item xs={12} sm={5}>
+              <Posts />
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={5}>
-            <Posts />
-          </Grid>
-        </Grid>
-      </Container>
-      {/* </Grow> */}
+        </Container>
+      </Grow>
 
     </Container>
   );

@@ -1,4 +1,4 @@
-import { Typography, Button, Paper, TextField, Grid } from '@material-ui/core'
+import { Typography, Button, Paper, TextField, Grid, CircularProgress } from '@material-ui/core'
 import useStyles from './styles'
 import { useSelector } from 'react-redux'
 
@@ -11,12 +11,15 @@ const Posts = () => {
     console.log(posts);
 
     return (
-        <Grid container>
-            <Grid item>
-                Posts
-                <Post />
+        !posts.length ? <CircularProgress /> : (
+            <Grid className={classes.container} alignItems="stretch" spacing={3} container>
+                {posts.map((post) => (
+                    <Grid key={post._id} item xs={12}>
+                        <Post post={post} />
+                    </Grid>
+                ))}
             </Grid>
-        </Grid>
+        )
     );
 }
 
