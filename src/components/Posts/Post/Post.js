@@ -9,13 +9,15 @@ const Post = ({ post }) => {
 
     return (
         <Card className={classes.card}>
-            <div className={classes.overlay}>
-                <Typography variant="h6">{post.creator}</Typography>
-            </div>
             <Typography variant="h5" gutterBottom>{post.title}</Typography>
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
-            </CardContent>
+            <div className={classes.overlay}>
+                <Typography variant="body1">By {post.creator}</Typography>
+            </div>
+            <div className={classes.content}>
+                <CardContent>
+                    <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
+                </CardContent>
+            </div>
             <CardActions>
                 <Button variant="outlined" color="primary">Like</Button>
                 <Button variant="outlined" color="primary">Delete</Button>

@@ -10,6 +10,11 @@ export default makeStyles((theme) => ({
         padding: theme.spacing(2),
         justifyContent: 'center',
         alignItems: 'center',
+        width:'100%'
+    },
+    form: {
+        display: 'flex',
+        flexWrap: 'wrap',
     },
     buttonSubmit: {
         marginBottom: 10,
